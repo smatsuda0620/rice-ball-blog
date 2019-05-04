@@ -57,6 +57,7 @@ export default ({ children }) => (
           ©
             {' '}
             {new Date().getFullYear()}
+            <a href="https://twitter.com/onigiri_"> onigiri_ </a>
               , Built with
             {' '}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
