@@ -1,0 +1,54 @@
+// Brower default overrides
+a {
+  text-decoration: none;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
+// Navbar
+.navbar-burger {
+  float: right;
+  padding: 0;
+  div {
+    width: 1.8rem;
+    height: 0.3rem;
+    background-color: black;
+    margin: 0.3rem 0;
+  }
+}
+
+.navbar-menu {
+  display: none;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin: 0.5rem 0;
+  &.is-active {
+    display: block;
+  }
+}
+
+.navbar-menu-item {
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 0.5rem 0;
+  border: ridge 0.2rem white;
+}
+
+// remark overrides
+.gatsby-code-title {
+  margin-bottom: -0.6rem;
+  padding: 0.3em 1em;
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  background-color: rgb(65, 59, 59);
+  color: white;
+  z-index: 0;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+}

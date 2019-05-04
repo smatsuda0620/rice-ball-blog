@@ -1,0 +1,21 @@
+{
+  "globals": {
+    "__PATH_PREFIX__": true
+  },
+  "env": {
+    "es6": true
+  },
+  "extends": [
+    "react-app",
+    "airbnb"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
+  "rules": {
+    "semi": "off",
+    "import/no-unresolved": "off",
+    "react/prop-types": [2, { "ignore": ["children"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"]  }]
+  }
+}
