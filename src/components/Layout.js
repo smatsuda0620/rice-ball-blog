@@ -2,6 +2,7 @@ import React from 'react'
 import { TypographyStyle } from 'react-typography'
 import { Helmet } from 'react-helmet'
 import Navbar from '@components/Navbar'
+import Footer from '@components/Footer'
 import { css } from '@emotion/core'
 import { StaticQuery, graphql } from 'gatsby'
 import typography, { rhythm } from '@utils/typography'
@@ -32,36 +33,24 @@ export default ({ children }) => (
         </Helmet>
         <div
           css={css`
-            display: box;
-            margin: 0 auto;
             max-width: 700px;
+            margin: 0 auto;
           `}
         >
           <header css={css`
-              margin-buttom: ${rhythm(2)};
+              padding: ${rhythm(0.25)};
             `
             }
           >
             <Navbar title={data.site.siteMetadata.title} />
           </header>
           <div css={css`
-              margin: ${rhythm(1)} ${rhythm(0.5)} ${rhythm(1)};
+              margin: ${rhythm(1)} ${rhythm(0.5)};
             `}
           >
             {children}
           </div>
-          <footer css={css`
-              margin: 0 ${rhythm(0.5)} ${rhythm(1)};
-            `}
-          >
-          ©
-            {' '}
-            {new Date().getFullYear()}
-            <a href="https://twitter.com/onigiri_"> onigiri_ </a>
-              , Built with
-            {' '}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
+          <Footer />
         </div>
       </div>
     )}

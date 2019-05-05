@@ -12,8 +12,12 @@ h1, h2, h3, h4, h5, h6 {
 
 // Navbar
 .navbar-burger {
+  display: block;
   float: right;
-  padding: 0;
+  padding: 0 0.2rem;
+  background: rgb(230, 227, 227);
+  border: solid 0.5px;
+  border-radius: 0;
   div {
     width: 1.8rem;
     height: 0.3rem;
@@ -25,17 +29,15 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-menu {
   display: none;
   width: 100%;
-  height: auto;
   text-align: center;
-  margin: 0.5rem 0 1rem;
+  margin: 0.5rem 0;
   &.is-active {
-    display: block;
+    display: inline-block;
   }
 }
 
 .navbar-menu-item {
   display: block;
-  float: left;
   width: 100%;
   padding: 0.5rem 0;
   border: ridge 0.2rem white;

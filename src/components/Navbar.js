@@ -65,16 +65,16 @@ const Navbar = class extends React.Component {
         <Media query="(min-width: 599px)">
           {matches => (matches ? (
             <nav css={css`
-                display: inline;
-                margin: 0 4rem;
+                display: inline-block;
+                float: right;
+                margin: ${rhythm(0.25)};
               `}
             >
               <Link
                 to="/about/"
                 css={css`
                   margin-left: ${rhythm(1)};
-                  font-family: 'Playfair Display',serif;
-                  font-size: 1.2rem;
+                  font-size: 1.5rem;
                 `}
               >
                 About
@@ -83,8 +83,7 @@ const Navbar = class extends React.Component {
                 to="/"
                 css={css`
                   margin-left: ${rhythm(1)};
-                  font-family: 'Playfair Display',serif;
-                  font-size: 1.2rem;
+                  font-size: 1.5rem;
                 `}
               >
                 Blog
@@ -97,6 +96,7 @@ const Navbar = class extends React.Component {
             >
               <button
                 type="button"
+                name="burger-menu"
                 className="navbar-burger"
                 onClick={() => this.toggleHamburger()}
               >
