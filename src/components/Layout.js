@@ -7,7 +7,8 @@ import { css } from '@emotion/core'
 import { StaticQuery, graphql } from 'gatsby'
 import typography, { rhythm } from '@utils/typography'
 
-import './all.scss'
+import './normalize.scss'
+import './layout.scss'
 
 export default ({ children }) => (
   <StaticQuery

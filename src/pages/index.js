@@ -12,25 +12,30 @@ export const IndexPage = ({ data }) => (
       <h4
         css={css`
             display: inline-block;
-            margin-top: ${rhythm(1)};
+            margin-bottom: ${rhythm(0.5)};
           `}
       >
           最近の日記
       </h4>
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id}>
+        <div
+          key={node.id}
+          css={css`
+            text-decoration: none;
+            margin-bottom: ${rhythm(0.5)};
+          `}
+        >
           <Link
             to={node.fields.slug}
             css={css`
-                text-decoration: none;
-                color: inherit;
-                margin-bottom: ${rhythm(4)};
-              `}
+              display: inline-block;
+          `}
           >
-            <h3
+            <h2
               css={css`
                   margin-bottom: 0;
                   color: #3498DB;
+                  font-size: 1.5rem;
                 `}
             >
               {node.frontmatter.title}
@@ -46,10 +51,11 @@ export const IndexPage = ({ data }) => (
                 {' '}
                 {node.frontmatter.date}
               </span>
-            </h3>
+            </h2>
             <p
               css={css`
-                  font-size: 1.0rem
+                  font-size: 1.0rem;
+                  color: black;
                 `
                 }
             >

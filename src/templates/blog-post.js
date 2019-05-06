@@ -1,13 +1,20 @@
 import React from 'react'
 import Layout from '@components/Layout'
 import { graphql } from 'gatsby'
+import { css } from '@emotion/core'
+import { rhythm } from '@utils/typography'
 import PropTypes from 'prop-types';
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark
   return (
     <Layout>
-      <h1>{post.frontmatter.title}</h1>
+      <h1 css={css`
+        margin-bottom: ${rhythm(1)};
+        `}
+      >
+        {post.frontmatter.title}
+      </h1>
       {/* eslint-disable-next-line react/no-danger */}
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </Layout>
