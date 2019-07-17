@@ -10,6 +10,7 @@ const BlogPost = ({ data }) => {
   return (
     <Layout>
       <h1 css={css`
+        font-size: 2rem;
         margin-bottom: ${rhythm(1)};
         `}
       >

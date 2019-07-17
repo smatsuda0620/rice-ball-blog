@@ -4,7 +4,7 @@ import Layout from '@components/Layout'
 
 export default () => (
   <Layout>
-    <p>test</p>
+    <p>準備中</p>
   </Layout>
 )
 

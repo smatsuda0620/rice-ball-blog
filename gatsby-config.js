@@ -3,8 +3,8 @@ const sass = require('sass')
 
 module.exports = {
   siteMetadata: {
-    title: 'Onigiri Development Diary',
-    description: 'フロントエンドエンジニアのおにぎりが日々の学び',
+    title: 'Onigiri Developer Blog',
+    description: 'Web Development blog written by onigiri',
   },
   plugins: [
     {

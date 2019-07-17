@@ -2,10 +2,37 @@ import React from 'react'
 import Media from 'react-media';
 import { css } from '@emotion/core'
 import { Link } from 'gatsby'
-import onigiriLog from '@images/onigiri.png'
 import { rhythm } from '@utils/typography'
-
 import PropTypes from 'prop-types';
+
+const activeClass = 'is-active';
+
+// NavMenu CSS
+const navbarMenuClass = css`
+  margin-left: ${rhythm(1)};
+  font-size: 1.5rem;
+`
+
+// Burger CSS
+const navbarBurgerClass = css`
+  display: block;
+  float: right;
+  padding: 0 0.2rem;
+`
+
+const navbarBurgerLineClass = css`
+  width: 1.8rem;
+  height: 0.25rem;
+  margin: 0.4rem 0;
+  background-color: black;
+  border-radius: 3px;
+`
+
+const navbarBurgerItemClass = css`
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+`
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -21,12 +48,8 @@ const Navbar = class extends React.Component {
     this.setState(
       {
         active: !active,
-      },
-      () => {
-        this.setState({
-          navBarActiveClass:
-            active ? 'is-active' : '',
-        })
+        navBarActiveClass:
+          !active ? activeClass : '',
       },
     )
   }
@@ -37,54 +60,38 @@ const Navbar = class extends React.Component {
     return (
       <div>
         <Link
-          to="/"
+          to="/blog/"
           css={css`
-              position: relative;
+              display: inline-block;
+              margin: ${rhythm(0.25)};
             `}
         >
-          <h3
+          <h2
             css={css`
-            display: inline;
+            display: inline-block;
             padding-left: ${rhythm(0.2)};
+            font-size: 1.5rem;
           `}
           >
             { title }
-          </h3>
-          <img
-            css={css`
-            position: relative;
-            bottom: -${rhythm(0.2)};
-            width: ${rhythm(1.1)};
-            height: ${rhythm(1.1)};
-            margin: 0 ${rhythm(0.2)};
-          `}
-            src={onigiriLog}
-            alt="Logo"
-          />
+          </h2>
         </Link>
         <Media query="(min-width: 599px)">
           {matches => (matches ? (
             <nav css={css`
-                display: inline-block;
+                display: block;
                 float: right;
-                margin: ${rhythm(0.25)};
               `}
             >
               <Link
                 to="/about/"
-                css={css`
-                  margin-left: ${rhythm(1)};
-                  font-size: 1.5rem;
-                `}
+                css={navbarMenuClass}
               >
                 About
               </Link>
               <Link
-                to="/"
-                css={css`
-                  margin-left: ${rhythm(1)};
-                  font-size: 1.5rem;
-                `}
+                to="/blog/"
+                css={navbarMenuClass}
               >
                 Blog
               </Link>
@@ -97,23 +104,34 @@ const Navbar = class extends React.Component {
               <button
                 type="button"
                 name="burger-menu"
-                className="navbar-burger"
+                css={navbarBurgerClass}
                 onClick={() => this.toggleHamburger()}
               >
-                <div />
-                <div />
-                <div />
+                <div css={navbarBurgerLineClass} />
+                <div css={navbarBurgerLineClass} />
+                <div css={navbarBurgerLineClass} />
               </button>
-              <div className={`navbar-menu ${navBarActiveClass}`}>
+              <div
+                css={css`
+                  display: none;
+                  margin: 0.5rem 0 0.25rem;
+                  width: 100%;
+                  text-align: center;
+                  &.${activeClass} {
+                    display: inline-block;
+                  }
+                `}
+                className={navBarActiveClass}
+              >
                 <Link
-                  className="navbar-menu-item"
+                  css={navbarBurgerItemClass}
                   to="/about/"
                 >
                   About
                 </Link>
                 <Link
-                  className="navbar-menu-item"
-                  to="/"
+                  css={navbarBurgerItemClass}
+                  to="/blog/"
                 >
                   Blog
                 </Link>

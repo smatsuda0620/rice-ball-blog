@@ -1,44 +1,10 @@
-// Brower default overrides
 a {
   &:hover {
     opacity: 0.5;
   }
 }
 
-// Navbar
-.navbar-burger {
-  display: block;
-  float: right;
-  padding: 0 0.2rem;
-  background: rgb(230, 227, 227);
-  border: solid 0.5px;
-  border-radius: 0;
-  div {
-    width: 1.8rem;
-    height: 0.25rem;
-    background-color: black;
-    margin: 0.35rem 0;
-  }
-}
-
-.navbar-menu {
-  display: none;
-  width: 100%;
-  text-align: center;
-  margin: 0.5rem 0;
-  &.is-active {
-    display: inline-block;
-  }
-}
-
-.navbar-menu-item {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 0;
-  border: ridge 0.2rem white;
-}
-
-// remark overrides
+// gatsby remark style overrides
 .gatsby-code-title {
   margin-bottom: -0.6rem;
   padding: 0.3em 1em;

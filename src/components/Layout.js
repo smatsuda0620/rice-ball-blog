@@ -6,8 +6,7 @@ import Footer from '@components/Footer'
 import { css } from '@emotion/core'
 import { StaticQuery, graphql } from 'gatsby'
 import typography, { rhythm } from '@utils/typography'
-
-import './normalize.scss'
+import onigiriImage from '@images/onigiri.png'
 import './layout.scss'
 
 export default ({ children }) => (
@@ -44,9 +43,32 @@ export default ({ children }) => (
             }
           >
             <Navbar title={data.site.siteMetadata.title} />
+            <p
+              css={css`
+              font-size: 1.1rem;
+              margin: ${rhythm(0.5)};
+              `}
+            >
+              Web development blog written by
+              {' '}
+              <a href="https://twitter.com/onigiri_">
+                <img
+                  css={css`
+                  position: relative;
+                  bottom: -${rhythm(0.2)};
+                  width: ${rhythm(1.1)};
+                  height: ${rhythm(1.1)};
+                  margin: 0 ${rhythm(0.2)};
+                `}
+                  src={onigiriImage}
+                  alt="Logo"
+                />
+              </a>
+              {' '}
+            </p>
           </header>
           <div css={css`
-              margin: ${rhythm(1)} ${rhythm(0.5)};
+              margin: ${rhythm(2)} ${rhythm(0.5)} ${rhythm(1)};
             `}
           >
             {children}
